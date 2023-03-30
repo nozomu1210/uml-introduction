@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+
+object "<u>利用者1:利用者</u>" as a{
+名前: A
+}
+object "<u>利用者2:利用者</u>" as b{
+名前: B
+}
+object "<u>301号室:客室</u>" as 301{
+タイプ: シングル
+宿泊費: 11000円
+キャンペーン価格: 9000円
+}
+object "<u>302号室:客室</u>" as 302{
+タイプ: シングル
+宿泊費: 11000円
+キャンペーン価格: 9000円
+}
+
+
+object "<u>チェックイン</u>" as c{
+日付:5月3日
+}
+
+object "<u>滞在期間</u>" as t{
+2泊
+}
+a -- c
+b -- c
+a -- t
+b -- t
+a-- 301
+b -- 302 
+@enduml
