@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+object "<u>高橋洋平さん:重要顧客</u>" as takahasi{
+    住所
+}
+object "<u>高田理恵さん:顧客</u>" as takada{
+    住所
+}
+object "<u>大坪直之さん:顧客</u>" as otubo{
+    住所
+}
+object "<u>冷蔵庫:商品</u>" as  reizouko{
+    型式=R8765
+}
+object "<u>テレビ:商品</u>" as tv{
+    型式=V12345
+}
+object "<u>プロジェクタ:商品</u>" as pro{
+    型式=P1122
+}
+object "<u>注文</u>" as tyumon{
+    注文日
+    数量
+}
+takahasi -- tyumon
+takada -- tyumon
+tyumon -- tv
+tyumon -- reizouko
+
+otubo -- pro 
+
+@enduml
