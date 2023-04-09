@@ -19,14 +19,22 @@ object "<u>プロジェクタ:商品</u>" as pro{
     型式=P1122
 }
 object "<u>注文</u>" as tyumon{
-    注文日
-    数量
+    注文日:11月21日
+    数量:2
+}
+object "<u>注文</u>" as tyumon2{
+    注文日:11月21日
+    数量:1
+}
+object "<u>注文</u>" as tyumon3{
+    注文日:12月23日
+    数量:1
 }
 takahasi -- tyumon
-takada -- tyumon
+takahasi -- tyumon2
+takada -- tyumon3
 tyumon -- tv
-tyumon -- reizouko
-
+tyumon2 -- reizouko
 otubo -- pro 
-
+tyumon3 -- reizouko
 @enduml
