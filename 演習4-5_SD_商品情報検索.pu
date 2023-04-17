@@ -1,0 +1,25 @@
+@startuml
+hide footbox
+skinparam style strictuml
+Actor ":会員" 
+participant ":商品検索画面" <<boundary>>
+participant ":商品検索コントローラ"<<control>>
+participant ":商品"<<entity>>
+participant ":商品カテゴリ"<<entity>>
+activate ":商品検索画面"
+activate ":商品検索コントローラ"
+activate ":会員"
+
+":会員" ->  ":商品検索画面":商品検索(商品番号)
+":商品検索画面" -> ":商品検索コントローラ":商品検索(商品番号)
+":商品検索コントローラ" -->> ":商品":<<create>> 生成()
+
+loop 商品カテゴリ数
+":商品検索コントローラ" -->> ":商品カテゴリ":<<create>> 生成()
+":商品検索コントローラ" -> ":商品":商品カテゴリ設定()
+activate ":商品"
+end loop
+":商品検索画面" <<-- ":商品検索コントローラ":商品情報
+":商品検索画面" -> ":商品検索画面":商品情報表示(商品情報)
+activate ":商品検索画面"
+@enduml
