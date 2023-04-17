@@ -1,0 +1,23 @@
+@startuml
+hide footbox
+skinparam style strictuml
+Actor ":受注者" 
+participant ":注文登録画面"<<boundary>>
+participant ":商品"<<entity>>
+participant ":注文"<<entity>>
+activate ":受注者"
+activate ":注文登録画面"
+activate ":商品"
+activate ":注文"
+":受注者" -> ":注文登録画面" :商品情報確認 ()
+":注文登録画面" -> ":商品":商品情報取得 ()
+":商品" -->> ":注文登録画面":商品情報
+deactivate ":商品"
+":注文登録画面" -> ":注文登録画面":商品情報取得 (商品情報)
+activate ":注文登録画面"
+deactivate ":注文登録画面"
+deactivate ":注文登録画面"
+":受注者" -> ":注文登録画面":商品登録(注文情報)
+activate ":注文登録画面"
+":注文登録画面" -->> ":注文":生成する () <<create>>
+@enduml
