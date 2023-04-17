@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+skinparam style strictuml
+participant ":データ更新コントローラ"<<control>>
+participant ":ホテル"<<hotel>>
+participant ":予約"
+activate ":データ更新コントローラ"
+activate ":ホテル"
+":データ更新コントローラ" -> ":ホテル":予約する()
+":ホテル" -> ":予約":<<create>>
+":ホテル" -> ":ホテル":予約登録()
+activate ":ホテル"
+@enduml
