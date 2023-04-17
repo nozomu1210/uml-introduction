@@ -1,0 +1,16 @@
+@startuml
+hide footbox
+skinparam style strictuml
+Actor ":客" 
+participant ":フロア定員" 
+participant ":料理人"
+mainframe sd ラーメン屋さん
+activate ":客"
+activate ":フロア定員"
+activate ":料理人"
+":客" -> ":フロア定員" :ラーメンを注文する
+":フロア定員" -> ":料理人" :調理を指示する
+":料理人" -> ":料理人":調理をする
+":料理人" -->> ":フロア定員":ラーメン
+":フロア定員" -->> ":客":ラーメン
+@enduml
