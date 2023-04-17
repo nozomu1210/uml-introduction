@@ -1,0 +1,22 @@
+@startuml
+hide footbox
+skinparam style strictuml
+actor ":ユーザ"
+participant ":ブラウザ"
+participant ":Webサーバ"
+participant ":画像サーバ"
+activate ":ユーザ"
+":ユーザ" -> ":ブラウザ":リンクボタンを押す
+activate ":ブラウザ"
+":ブラウザ" -> ":Webサーバ":画像ファイル名を渡す
+activate ":Webサーバ"
+":Webサーバ" -> ":画像サーバ":画像ファイル名を探す\n命令を渡す
+activate ":画像サーバ"
+":画像サーバ" -> ":画像サーバ":画像ファイルを探す
+":画像サーバ" -->> ":Webサーバ":画像ファイル
+deactivate ":画像サーバ"
+":Webサーバ" -->> ":ブラウザ":HTMLと画像ファイル
+deactivate ":Webサーバ"
+":ブラウザ" -->> ":ユーザ":画像の閲覧
+deactivate ":ブラウザ"
+@enduml
