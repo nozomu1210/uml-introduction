@@ -5,7 +5,7 @@ participant "user:利用者"
 participant ":予約画面"
 activate "user:利用者"
 activate ":予約画面"
-"user:利用者" -> ":予約画面" :ログイン()
+"user:利用者" ->> ":予約画面" :ログイン()
 ":予約画面" -> ":予約画面":認証()
 activate ":予約画面"
 @enduml
