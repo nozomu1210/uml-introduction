@@ -1,22 +1,23 @@
 @startuml
 left to right direction
 object "<u>車</u>" as car{
-
+    車種
+    色
 }
 object "<u>タイヤ1:タイヤ</u>" as 1{
-
+    サイズ
 }
 object "<u>タイヤ2:タイヤ</u>" as 2{
-
+    サイズ
 }
 object "<u>タイヤ3:タイヤ</u>" as 3{
-
+    サイズ
 }
 object "<u>タイヤ4:タイヤ</u>" as 4{
-
+    サイズ
 }
-car -- 1
-car -- 2
-car -- 3
-car -- 4
+car "1"---"1" 1
+car "1"---"1" 2
+car "1"---"1" 3
+car "1"---"1" 4
 @enduml
