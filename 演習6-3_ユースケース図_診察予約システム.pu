@@ -1,0 +1,16 @@
+@startuml 診察予約システム
+left to right direction
+actor 患者
+actor 看護師
+rectangle 診察予約システム {
+    usecase メニュー
+    usecase 予約と確認
+    usecase あなたの順番
+    usecase 今の順番
+}
+    患者 --> メニュー
+    患者 --> 予約と確認
+    患者 --> あなたの順番
+    患者 --> 今の順番
+    今の順番 <-- 看護師
+@enduml
