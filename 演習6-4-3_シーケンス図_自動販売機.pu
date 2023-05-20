@@ -1,0 +1,17 @@
+@startuml 自動販売機
+hide footbox
+skinparam style strictuml
+Actor ":客" 
+participant ":料金装置" 
+participant ":ボタン"
+participant ":ベンダー装置"
+mainframe sd 自動販売機
+activate ":客"
+activate ":料金装置"
+activate ":ボタン"
+activate ":ベンダー装置"
+
+":客" -> ":料金装置":お金を料金装置に入れる
+":料金装置" -> ":ボタン" :ボタンを押す
+":ボタン" -> ":ベンダー装置":ドリンクが出てくる
+@enduml
