@@ -1,0 +1,14 @@
+@startuml ライントレーサー
+left to right direction
+actor ユーザー
+actor ライントレーサー as line
+rectangle ライントレーサー{
+usecase 電源SWを入れる
+usecase 右旋回
+usecase 左旋回
+}
+ユーザー --> 電源SWを入れる
+line --> 右旋回
+line --> 左旋回
+
+@enduml
