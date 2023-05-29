@@ -1,0 +1,14 @@
+@startuml
+title カレーライス
+start
+fork
+    :野菜と肉を切る;
+    :野菜と肉を炒める;
+    :煮る;
+    :カレールーを入れる;
+fork again
+    :米を炊く;
+end fork
+:カレーライス]
+stop
+@enduml
